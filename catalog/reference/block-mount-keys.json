@@ -1,0 +1,2278 @@
+{
+  "generated": "2026-08-27",
+  "source": "pages/catalog/blocks/*.md, read from source",
+  "block_count": 154,
+  "mismatch_count": 44,
+  "generic_main_count": 27,
+  "dynamic_key_count": 9,
+  "mismatch_families": {
+    "generic-main": 27,
+    "vfx-internal-name": 5,
+    "vscode-rename": 12
+  },
+  "field_notes": {
+    "mount_key": "the data-composition-id / window.__timelines key the installed file actually declares. Mount the block with THIS, not the slug. Never null: every one of the 154 resolves.",
+    "matches_slug": "false means the docs' own usage snippet (which uses the slug) will not match the file",
+    "mismatch_family": "none | generic-main | vscode-rename | vfx-internal-name | straggler",
+    "mount_key_source": "literal-timeline-key | declared-composition-id | fallback-slug",
+    "mount_key_dynamic": "true for the 9 blocks with no literal __timelines[\"...\"]; they register via a variable holding their own declared id. mount_key is still correct - see mount_key_reason",
+    "install_files": "total files written by the install, composition file included",
+    "needs": "gsap is universal. three/d3/topojson are CDN unless three_source says otherwise. html-in-canvas is the experimental layoutSubtree/drawElementImage API - no polyfill exists",
+    "local_lib": "present only when the block loads a locally-installed runtime script that must survive install",
+    "render_time_network": "block fetches data over the network during render - fails on an offline render host",
+    "var_count": "variables the file actually declares, from either declaration form",
+    "var_source": "html-array | root-object | index-fallback | none",
+    "doc_shows_interpolation_artifact": "the published page renders a literal \" ' + compositionId + ' \" as a composition id; a reader copying it gets a broken string"
+  },
+  "blocks": {
+    "ai-chat-reveal": {
+      "mount_key": "ai-chat-reveal",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 13,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "app-showcase": {
+      "mount_key": "app-showcase",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "apple-money-count": {
+      "mount_key": "apple-money-count",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "bar-chart-race": {
+      "mount_key": "bar-chart-race",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 10,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "beat-freeze-cut": {
+      "mount_key": "beat-freeze-cut",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "blue-sweater-intro-video": {
+      "mount_key": "blue-sweater-intro-video",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "camcorder-hud": {
+      "mount_key": "camcorder-hud",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "compositionId"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "camera-dolly-zoom": {
+      "mount_key": "camera-dolly-zoom",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 4,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "chatgpt-exchange": {
+      "mount_key": "chatgpt-exchange",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 6,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 22,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "chromatic-radial-split": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "cinematic-zoom": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "claude-exchange": {
+      "mount_key": "claude-exchange",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 9,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 14,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "code-3d-extrude": {
+      "mount_key": "code-3d-extrude",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "id",
+        "spec.id"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "code-diff": {
+      "mount_key": "code-diff",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-highlight": {
+      "mount_key": "code-highlight",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-morph": {
+      "mount_key": "code-morph",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-particle-assemble": {
+      "mount_key": "code-particle-assemble",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "id",
+        "spec.id"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "code-scroll": {
+      "mount_key": "code-scroll",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-shader-dissolve": {
+      "mount_key": "code-shader-dissolve",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "id",
+        "spec.id"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "code-snippet-apple-terminal-basic": {
+      "mount_key": "code-snippet-apple-terminal-basic",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-clear-dark": {
+      "mount_key": "code-snippet-apple-terminal-clear-dark",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-clear-light": {
+      "mount_key": "code-snippet-apple-terminal-clear-light",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-grass": {
+      "mount_key": "code-snippet-apple-terminal-grass",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-homebrew": {
+      "mount_key": "code-snippet-apple-terminal-homebrew",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-man-page": {
+      "mount_key": "code-snippet-apple-terminal-man-page",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-novel": {
+      "mount_key": "code-snippet-apple-terminal-novel",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-ocean": {
+      "mount_key": "code-snippet-apple-terminal-ocean",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-pro": {
+      "mount_key": "code-snippet-apple-terminal-pro",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-red-sands": {
+      "mount_key": "code-snippet-apple-terminal-red-sands",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-silver-aerogel": {
+      "mount_key": "code-snippet-apple-terminal-silver-aerogel",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-apple-terminal-solid-colors": {
+      "mount_key": "code-snippet-apple-terminal-solid-colors",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-dark-2026": {
+      "mount_key": "vscode-dark-2026",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-dark-modern": {
+      "mount_key": "vscode-dark-modern",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-dark-plus": {
+      "mount_key": "vscode-dark-plus",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-flight": {
+      "mount_key": "code-snippet-flight",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "code-snippet-high-contrast-light": {
+      "mount_key": "vscode-high-contrast-light",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-high-contrast": {
+      "mount_key": "vscode-high-contrast",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-light-2026": {
+      "mount_key": "vscode-light-2026",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-light-modern": {
+      "mount_key": "vscode-light-modern",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-light-plus": {
+      "mount_key": "vscode-light-plus",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-monokai": {
+      "mount_key": "vscode-monokai",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-solarized-light": {
+      "mount_key": "vscode-solarized-light",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-visual-studio-dark": {
+      "mount_key": "vscode-visual-studio-dark",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-snippet-visual-studio-light": {
+      "mount_key": "vscode-visual-studio-light",
+      "matches_slug": false,
+      "mismatch_family": "vscode-rename",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "doc_shows_interpolation_artifact": true
+    },
+    "code-typing": {
+      "mount_key": "code-typing",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "cosmic-orb": {
+      "mount_key": "cosmic-orb",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 9,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "cross-warp-morph": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "data-chart": {
+      "mount_key": "data-chart",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "domain-warp-dissolve": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "editorial-flash-overlay": {
+      "mount_key": "editorial-flash-overlay",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "compositionId"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "flash-through-white": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "flowchart-vertical": {
+      "mount_key": "flowchart-vertical",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "flowchart": {
+      "mount_key": "flowchart",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "freeze-frame-dressing": {
+      "mount_key": "freeze-frame-dressing",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "compositionId"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "gallery-tunnel": {
+      "mount_key": "gallery-tunnel",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 10,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "glitch": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "gravitational-lens": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "halftone-field": {
+      "mount_key": "halftone-field",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 11,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "heygen-avatar-promo-card": {
+      "mount_key": "heygen-avatar-promo-card",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 16,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 17,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "hw-frame": {
+      "mount_key": "hw-frame",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "hw-path-text": {
+      "mount_key": "hw-path-text",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "hw-pipeline": {
+      "mount_key": "hw-pipeline",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "hw-scribble-transition": {
+      "mount_key": "hw-scribble-transition",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "hw-text-cloud": {
+      "mount_key": "hw-text-cloud",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "hw-title": {
+      "mount_key": "hw-title",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "instagram-follow": {
+      "mount_key": "instagram-follow",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "ios26-liquid-glass": {
+      "mount_key": "ios26-liquid-glass",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 29,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "light-leak": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "liquid-glass-context-menu": {
+      "mount_key": "liquid-glass-context-menu",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "local_lib": "lib/liquid-glass.iife.js",
+      "three_source": "local_lib - three is used but never loaded from a CDN in this file; assumed bundled in the local lib (lib contents not published)"
+    },
+    "liquid-glass-media-controls": {
+      "mount_key": "liquid-glass-media-controls",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "local_lib": "lib/liquid-glass.iife.js",
+      "three_source": "local_lib - three is used but never loaded from a CDN in this file; assumed bundled in the local lib (lib contents not published)"
+    },
+    "liquid-glass-notification": {
+      "mount_key": "liquid-glass-notification",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "local_lib": "lib/liquid-glass.iife.js",
+      "three_source": "local_lib - three is used but never loaded from a CDN in this file; assumed bundled in the local lib (lib contents not published)"
+    },
+    "liquid-glass-widgets": {
+      "mount_key": "liquid-glass-widgets",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none",
+      "local_lib": "lib/liquid-glass.iife.js",
+      "three_source": "local_lib - three is used but never loaded from a CDN in this file; assumed bundled in the local lib (lib contents not published)"
+    },
+    "logo-outro": {
+      "mount_key": "logo-outro",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lower-third-bild": {
+      "mount_key": "lower-third-bild",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 2,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "root-object"
+    },
+    "lt-accent-underline": {
+      "mount_key": "lt-accent-underline",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-bold-block": {
+      "mount_key": "lt-bold-block",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-clean-bar": {
+      "mount_key": "lt-clean-bar",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-color-block": {
+      "mount_key": "lt-color-block",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-dark-card": {
+      "mount_key": "lt-dark-card",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-kicker-name": {
+      "mount_key": "lt-kicker-name",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-mask-reveal": {
+      "mount_key": "lt-mask-reveal",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-neon-border": {
+      "mount_key": "lt-neon-border",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 9,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "lt-side-rule": {
+      "mount_key": "lt-side-rule",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-soft-pill": {
+      "mount_key": "lt-soft-pill",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "lt-stack-bars": {
+      "mount_key": "lt-stack-bars",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "macos-notification": {
+      "mount_key": "macos-notification",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "macos-tahoe-liquid-glass": {
+      "mount_key": "macos-tahoe-liquid-glass",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 19,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "message-thread-reveal": {
+      "mount_key": "message-thread-reveal",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 4,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 21,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "mk-background": {
+      "mount_key": "mk-background",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "mk-callout-highlight": {
+      "mount_key": "mk-callout-highlight",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "mk-clone-wall-transition": {
+      "mount_key": "mk-clone-wall-transition",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "mk-line-graph": {
+      "mount_key": "mk-line-graph",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "mk-placeholder-grid": {
+      "mount_key": "mk-placeholder-grid",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "mk-progress-stat": {
+      "mount_key": "mk-progress-stat",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "mk-specs-list": {
+      "mount_key": "mk-specs-list",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "news-ticker": {
+      "mount_key": "news-ticker",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "north-korea-locked-down": {
+      "mount_key": "north-korea-locked-down",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "notes-reveal": {
+      "mount_key": "notes-reveal",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 5,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 9,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "notification-cascade": {
+      "mount_key": "notification-cascade",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 4,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 10,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "nyc-paris-flight": {
+      "mount_key": "nyc-paris-flight",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "organic-light-leak-overlay": {
+      "mount_key": "organic-light-leak-overlay",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "none",
+      "mount_key_dynamic_via": [
+        "compositionId"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "oscilloscope-trace": {
+      "mount_key": "oscilloscope-trace",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 7,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "html-array",
+      "mount_key_dynamic_via": [
+        "COMP_ID"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "rack-focus": {
+      "mount_key": "rack-focus",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 11,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "reddit-post": {
+      "mount_key": "reddit-post",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "ridged-burn": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "ripple-waves": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "sdf-iris": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "share-sheet-carousel": {
+      "mount_key": "share-sheet-carousel",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 7,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 11,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "slack-notification-ad": {
+      "mount_key": "slack-notification-ad",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 8,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 25,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "spain-map": {
+      "mount_key": "spain-map",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "d3",
+        "topojson"
+      ],
+      "render_time_network": true,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "spiral-galaxy": {
+      "mount_key": "spiral-galaxy",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three"
+      ],
+      "render_time_network": false,
+      "var_count": 7,
+      "mount_key_source": "declared-composition-id",
+      "mount_key_dynamic": true,
+      "var_source": "html-array",
+      "mount_key_dynamic_via": [
+        "COMP_ID"
+      ],
+      "mount_key_reason": "no literal __timelines[\"...\"] in the file; it registers via a variable holding its own declared data-composition-id, which equals the slug. Key is known, not absent."
+    },
+    "split-flap-board": {
+      "mount_key": "split-flap-board",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 5,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "spotify-card": {
+      "mount_key": "spotify-card",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "swirl-vortex": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "thermal-distortion": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "thread-message-stack": {
+      "mount_key": "thread-message-stack",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "tiktok-follow": {
+      "mount_key": "tiktok-follow",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-3d": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-blur": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-cover": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-destruction": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-dissolve": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-distortion": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-grid": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-light": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-mechanical": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-other": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-push": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-radial": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "transitions-scale": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "ui-3d-reveal": {
+      "mount_key": "ui-3d-reveal",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "us-map-bubble": {
+      "mount_key": "us-map-bubble",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "d3",
+        "topojson"
+      ],
+      "render_time_network": true,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "us-map-flow": {
+      "mount_key": "us-map-flow",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "d3",
+        "topojson"
+      ],
+      "render_time_network": true,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "us-map-hex": {
+      "mount_key": "us-map-hex",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "us-map": {
+      "mount_key": "us-map",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "d3",
+        "topojson"
+      ],
+      "render_time_network": true,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-anamorphic-flare": {
+      "mount_key": "vfx-anamorphic-flare",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 8,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "vfx-iphone-device": {
+      "mount_key": "devices-canvas",
+      "matches_slug": false,
+      "mismatch_family": "vfx-internal-name",
+      "install_files": 5,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-liquid-background": {
+      "mount_key": "vfx-liquid-background",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-liquid-glass": {
+      "mount_key": "liquid-glass",
+      "matches_slug": false,
+      "mismatch_family": "vfx-internal-name",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-magnetic": {
+      "mount_key": "magnetic-cursor",
+      "matches_slug": false,
+      "mismatch_family": "vfx-internal-name",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-portal": {
+      "mount_key": "portal-transition",
+      "matches_slug": false,
+      "mismatch_family": "vfx-internal-name",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-shatter": {
+      "mount_key": "glass-shatter",
+      "matches_slug": false,
+      "mismatch_family": "vfx-internal-name",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "three",
+        "html-in-canvas"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vfx-text-cursor": {
+      "mount_key": "vfx-text-cursor",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "vpn-youtube-spot": {
+      "mount_key": "vpn-youtube-spot",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "weight-wave": {
+      "mount_key": "weight-wave",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 3,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 9,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "html-array"
+    },
+    "whip-pan": {
+      "mount_key": "main",
+      "matches_slug": false,
+      "mismatch_family": "generic-main",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "world-map": {
+      "mount_key": "world-map",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap",
+        "d3",
+        "topojson"
+      ],
+      "render_time_network": true,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "x-post": {
+      "mount_key": "x-post",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "yt-comment-card": {
+      "mount_key": "yt-comment-card",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "yt-lcd-background": {
+      "mount_key": "yt-lcd-background",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "yt-logo-intro": {
+      "mount_key": "yt-logo-intro",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "yt-lower-third": {
+      "mount_key": "yt-lower-third",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 2,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "yt-prism-title": {
+      "mount_key": "yt-prism-title",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    },
+    "yt-vertical-fill": {
+      "mount_key": "yt-vertical-fill",
+      "matches_slug": true,
+      "mismatch_family": "none",
+      "install_files": 1,
+      "needs": [
+        "gsap"
+      ],
+      "render_time_network": false,
+      "var_count": 0,
+      "mount_key_source": "literal-timeline-key",
+      "mount_key_dynamic": false,
+      "var_source": "none"
+    }
+  }
+}

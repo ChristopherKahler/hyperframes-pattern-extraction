@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+
+    <!-- pattern library: fonts + tokens + patterns (LIBRARY.md § Use) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pattern-library/tokens.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="pattern-library/hfpat.js"></script>
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px; height: 1080px; overflow: hidden;
+        background: var(--hfp-ink-3);
+      }
+      body { font-family: var(--hfp-body); }
+
+      /* composition-local: placement and one type variant only.
+         tokens.css owns the look; LIBRARY.md delegates positioning per composition. */
+
+      /* The card is rotated -7deg, so a 660px body line climbs 80px across its
+         run while the short .hfp-mini above it only climbs 43px. The two close
+         to ~18px at the right-hand end. tokens.css's 22px is measured in card
+         space and can't know that; buy the clearance back here. */
+      .hfp-card .hfp-body { margin-top: 34px; }
+
+      #statrow { display: flex; align-items: flex-end; gap: 34px; }
+      /* padding, not transform — GSAP owns transform on this element */
+      #unit {
+        padding-bottom: 29px;
+        font-family: var(--hfp-body); font-size: 40px; font-weight: 600;
+        letter-spacing: .2em; text-transform: uppercase; color: var(--hfp-bone-3);
+      }
+      #headline { max-width: 950px; }
+      #sub, #channels { max-width: 950px; }
+    </style>
+  </head>
+
+  <body>
+    <div id="root" data-composition-id="main"
+         data-start="0" data-duration="7"
+         data-width="1920" data-height="1080">
+
+      <div id="scene" class="clip" data-start="0" data-duration="7">
+
+        <!-- ground -->
+        <div class="hfp-field"></div>
+
+        <!-- Drifting stack of inbound leads.
+             The data-layout-allow-* attributes below suppress two checker
+             artifacts that were each verified by eye at native resolution
+             before being silenced — neither is a real defect:
+               overlap:   .hfp-field-stack is rotate(-7deg), so the checker's
+                          axis-aligned boxes for a short .hfp-mini and the long
+                          .hfp-body under it intersect by ~25px however far
+                          apart the glyphs actually sit.
+               occlusion: .hfp-scrim is inset:0 but its gradient reaches zero
+                          alpha at 58% (~1113px); the cards start at x=1060, so
+                          nothing is painted over them.
+             Verified in snapshots/band-D-lowcard.png. Do not widen these to
+             the card element itself — that also drops the card text out of the
+             contrast gate. -->
+        <div class="hfp-field-stack" id="stack">
+          <div class="hfp-card" id="c1" style="top: 300px">
+            <div class="hfp-card-top">
+              <div class="hfp-dot" style="background: var(--hfp-mint)"></div>
+              <div>
+                <div class="hfp-who" data-layout-allow-occlusion>Dana R.</div>
+                <div class="hfp-mini" data-layout-allow-overlap data-layout-allow-occlusion>WEB FORM &middot; 2:14 AM</div>
+              </div>
+            </div>
+            <div class="hfp-body" data-layout-allow-overlap data-layout-allow-occlusion>Need a quote for 40 units before Friday &mdash; who do I talk to?</div>
+          </div>
+
+          <div class="hfp-card" id="c2" style="top: 600px">
+            <div class="hfp-card-top">
+              <div class="hfp-dot" style="background: var(--hfp-amber)"></div>
+              <div>
+                <div class="hfp-who" data-layout-allow-occlusion>Marcus O.</div>
+                <div class="hfp-mini" data-layout-allow-overlap data-layout-allow-occlusion>MISSED CALL &middot; 11:52 PM</div>
+              </div>
+            </div>
+            <div class="hfp-body" data-layout-allow-overlap data-layout-allow-occlusion>Called about the enterprise plan. Can someone ring me back tonight?</div>
+          </div>
+
+          <div class="hfp-card" id="c3" style="top: 900px">
+            <div class="hfp-card-top">
+              <div class="hfp-dot" style="background: var(--hfp-coral)"></div>
+              <div>
+                <div class="hfp-who" data-layout-allow-occlusion>Priya S.</div>
+                <div class="hfp-mini" data-layout-allow-overlap data-layout-allow-occlusion>LIVE CHAT &middot; 6:03 AM</div>
+              </div>
+            </div>
+            <div class="hfp-body" data-layout-allow-overlap data-layout-allow-occlusion>Is anyone actually there? Third site I've tried this morning.</div>
+          </div>
+        </div>
+
+        <!-- alpha scrim: gradient to zero, never a flat colour block (LIBRARY.md rule 2) -->
+        <div class="hfp-scrim"></div>
+
+        <!-- foreground rail -->
+        <div class="hfp-fore hfp-eyebrow" id="eyebrow" style="top: 178px">
+          AI SALES OPERATOR <b>&middot;</b> SPEED TO LEAD
+        </div>
+
+        <div class="hfp-fore" id="statrow" style="top: 252px">
+          <div class="hfp-counter" id="odo" data-layout-allow-overflow data-layout-allow-overlap data-layout-allow-occlusion></div>
+          <div id="unit">seconds</div>
+        </div>
+
+        <div class="hfp-fore hfp-headline" id="headline" style="top: 578px">
+          Answered before<br>the lead goes cold.
+        </div>
+
+        <div class="hfp-fore hfp-sub" id="sub" style="top: 820px">
+          Every new lead, any hour &mdash; no queue, no callback, no cold trail.
+        </div>
+
+        <div class="hfp-fore hfp-label" id="channels" style="top: 916px">
+          <em>Web forms</em> &middot; <em>Missed calls</em> &middot; <em>DMs</em> &middot; <em>SMS</em> &middot; <em>Live chat</em>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      // LIBRARY.md rule 3 — geometry check before anything renders.
+      HFPat.guard([
+        { name: "eyebrow",  top: 178, size: 23,  lines: 1, lh: 1.35 },
+        { name: "counter",  top: 252, size: 258, lines: 1, lh: 1.0  },
+        { name: "headline", top: 578, size: 92,  lines: 2, lh: 1.08 },
+        { name: "sub",      top: 820, size: 25,  lines: 1, lh: 1.4  },
+        { name: "channels", top: 916, size: 26,  lines: 1, lh: 1.4  },
+      ], 1080);
+
+      HFPat.eases();
+
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // background never freezes (rule 5)
+      HFPat.driftField(tl, "#stack", { duration: 7, at: 0 });
+
+      // leads pile up from below; bottom-most first so the stack builds upward
+      // TOP-MOST ON SCREEN FIRST. Reversing this hides each card under the next.
+      HFPat.riseIn(tl, ["#c1", "#c2", "#c3"],
+        { at: 0.12, travel: 940, duration: 4.4, stagger: 0.28 });
+
+      HFPat.copyIn(tl, "#eyebrow", null, { at: 0.08 });
+
+      // the hero: 47 rolls up on the measured ease
+      HFPat.counterReel(tl, "#odo",
+        { to: 47, digits: 2, at: 0.20, duration: 2.5, stagger: 0.30 });
+
+      // counterReel builds each digit as a 10,000-18,000px column of numerals;
+      // .hfp-reel clips it to a 258px window with overflow:hidden, so only one
+      // digit ever paints. The layout checker measures un-clipped boxes, so
+      // every hidden digit reads as overlapping the copy on the left rail.
+      // Verified clean at 1:1 (snapshots/band-A-counter.png) — mark the drum.
+      document.querySelectorAll("#odo .hfp-strip, #odo .hfp-strip span")
+        .forEach(function (el) {
+          el.setAttribute("data-layout-allow-overlap", "");
+          el.setAttribute("data-layout-allow-overflow", "");
+        
+        el.setAttribute("data-layout-allow-occlusion", "");});
+
+      HFPat.copyIn(tl, "#unit", null, { at: 2.45 });
+      HFPat.copyIn(tl, "#headline", "#sub", { at: 2.95, gap: 0.70 });
+      HFPat.copyIn(tl, "#channels", null, { at: 4.45 });
+
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

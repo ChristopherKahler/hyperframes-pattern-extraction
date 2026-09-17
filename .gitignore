@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.BAK*
+*.pre-enforce
+.venv/
+node_modules/
+# Generated locally, not redistributed (upstream HyperFrames docs):
+hyperframes-docs/

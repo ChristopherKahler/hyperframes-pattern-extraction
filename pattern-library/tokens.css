@@ -1,0 +1,126 @@
+/* ===========================================================================
+   tokens.css — the look that shipped in v009
+   Pair with hfpat.js. Import both, then position elements per composition.
+
+   Fonts: Bricolage Grotesque (display) + Inter Tight (everything else).
+   Deliberately not the usual grotesk pairing — Bricolage has enough
+   character in the numerals to carry a counter as the hero element.
+
+     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+   =========================================================================== */
+
+:root {
+  /* Deep teal ground. Chosen against the three AI-default palettes
+     (cream+serif+terracotta / near-black+acid-green / broadsheet). */
+  --hfp-ink:     #0b2224;
+  --hfp-ink-2:   #17454a;
+  --hfp-ink-3:   #081a1c;
+  --hfp-surface: rgba(26, 72, 77, .97);   /* cards, panels */
+
+  --hfp-bone:    #f4efe2;                 /* primary type */
+  --hfp-bone-2:  #e2ddd0;                 /* body copy */
+  --hfp-bone-3:  #cac4b5;                 /* labels, captions */
+
+  --hfp-amber:   #ffb020;                 /* stars, single accent */
+  --hfp-coral:   #e4674c;                 /* second accent, use sparingly */
+  --hfp-mint:    #7fb8a4;                 /* third, avatars only */
+
+  --hfp-display: "Bricolage Grotesque", "Inter Tight", sans-serif;
+  --hfp-body:    "Inter Tight", system-ui, sans-serif;
+
+  --hfp-margin:  140px;                   /* frame margin at 1920x1080 */
+  --hfp-radius:  24px;
+  --hfp-shadow:  0 26px 54px rgba(0, 0, 0, .38);
+}
+
+/* ---- ground ------------------------------------------------------------- */
+.hfp-field {
+  position: absolute; inset: 0;
+  background: radial-gradient(140% 100% at 22% 8%,
+    var(--hfp-ink-2) 0%, #0e2b2e 42%, var(--hfp-ink-3) 100%);
+}
+.hfp-grain {
+  position: absolute; inset: 0;
+  opacity: .14; mix-blend-mode: overlay; pointer-events: none;
+}
+
+/* ---- counter reel ------------------------------------------------------- */
+/* The mask is an ALPHA mask on the reel, never an opaque colour scrim.
+   A scrim was tried first and its edges showed as rectangular seams under
+   every digit, because the backdrop is a gradient and the scrim was flat. */
+.hfp-reel {
+  width: 172px; height: 258px; overflow: hidden; position: relative;
+  /* 13/87, not 30/70. A 246px glyph in a 258px box has only ~6px of slack;
+     30/70 fades ~37px off the cap and baseline, which reads right mid-roll and
+     wrong the moment the number lands. Found by a cold session at 1:1. */
+  -webkit-mask-image: linear-gradient(180deg,
+    transparent 0%, #000 13%, #000 87%, transparent 100%);
+  mask-image: linear-gradient(180deg,
+    transparent 0%, #000 13%, #000 87%, transparent 100%);
+}
+.hfp-strip { position: absolute; top: 0; left: 0; width: 100%; will-change: transform; }
+.hfp-strip span {
+  display: block; height: 258px; line-height: 258px; text-align: center;
+  font-family: var(--hfp-display);
+  font-weight: 800; font-size: 246px;
+  font-variant-numeric: tabular-nums;
+  color: var(--hfp-bone);
+}
+.hfp-counter { display: flex; align-items: flex-start; gap: 4px; }
+
+/* ---- type scale --------------------------------------------------------- */
+.hfp-eyebrow {
+  font-family: var(--hfp-body); font-size: 23px; font-weight: 500;
+  letter-spacing: .34em; text-transform: uppercase; color: var(--hfp-bone-3);
+}
+.hfp-eyebrow b { color: var(--hfp-amber); font-weight: 600; }
+
+.hfp-headline {
+  font-family: var(--hfp-display); font-weight: 800; font-size: 92px;
+  line-height: 1.08; letter-spacing: -.015em; color: var(--hfp-bone);
+}
+.hfp-sub  { font-family: var(--hfp-body); font-size: 25px; color: var(--hfp-bone-3); }
+.hfp-label{ font-family: var(--hfp-body); font-size: 26px; letter-spacing: .04em; color: var(--hfp-bone-3); }
+.hfp-label em { font-style: normal; color: var(--hfp-bone); font-weight: 600; }
+
+/* ---- stars -------------------------------------------------------------- */
+.hfp-stars { display: flex; gap: 16px; }
+.hfp-star  { width: 46px; height: 46px; color: var(--hfp-amber); transform-origin: 50% 60%; }
+
+/* ---- drift field -------------------------------------------------------- */
+/* Oversized, tilted, alpha-masked top and bottom so cards enter and leave
+   without a hard edge. Sits behind the type; the scrim below protects legibility. */
+.hfp-field-stack {
+  /* z-index is REQUIRED. Without it this paints over the type rail. */
+  z-index: 2;
+  position: absolute; right: -40px; top: -180px;
+  width: 900px; height: 1700px;
+  transform: rotate(-7deg);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 74%, transparent 96%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 74%, transparent 96%);
+}
+.hfp-scrim {
+  z-index: 3; position: absolute; inset: 0;
+  background: linear-gradient(95deg,
+    rgba(8,26,28,.94) 0%, rgba(8,26,28,.86) 26%,
+    rgba(8,26,28,.30) 44%, rgba(8,26,28,0) 58%);
+}
+
+/* ---- card --------------------------------------------------------------- */
+/* No border. Fill, shadow and spacing only — borders clutter and they break. */
+.hfp-card {
+  position: absolute; left: 0; width: 748px;
+  background: var(--hfp-surface);
+  border-radius: var(--hfp-radius);
+  padding: 40px 44px;
+  box-shadow: var(--hfp-shadow);
+  will-change: transform;
+}
+.hfp-card-top { display: flex; align-items: center; gap: 18px; }
+.hfp-dot   { width: 62px; height: 62px; border-radius: 50%; flex: none; }
+.hfp-who   { font-size: 30px; font-weight: 600; color: var(--hfp-bone); }
+.hfp-mini  { font-size: 24px; color: var(--hfp-amber); letter-spacing: 3px; margin-top: 3px; }
+.hfp-body  { margin-top: 22px; font-size: 28px; line-height: 1.48; color: var(--hfp-bone-2); }
+
+/* ---- foreground rail ---------------------------------------------------- */
+.hfp-fore { z-index: 5; position: absolute; left: var(--hfp-margin); }

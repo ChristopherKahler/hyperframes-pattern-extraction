@@ -1,0 +1,128 @@
+{
+  "generated": "2026-08-27",
+  "source": "hfpat.js + LIBRARY.md, read from disk",
+  "note": "SEPARATE FROM catalog-index.json ON PURPOSE. That file is regenerated from the mirrored HyperFrames docs by tools/hyperframes-fix/build-catalog-index.py; anything appended there is deleted on the next re-mirror. hfcat reads both files and concatenates. Design: seal, 2026-08-27.",
+  "g9_fields_pending": "provenance / convergence / approved are produced by /pattern-extract gate G9 as a condition of codifying a pattern. They are null here because these patterns predate the index, not because the data is unavailable. Populate on the next G9 run rather than back-filling from memory.",
+  "count": 7,
+  "items": [
+    {
+      "slug": "counterReel",
+      "kind": "hfpat",
+      "title": "Counter Reel",
+      "description": "Mechanical odometer, digits roll at different rates. Lower digits spin more, which is what makes it read as a drum rather than a number swap.",
+      "install": "HFPat.counterReel(el, opts) — junction pattern-library/ into the project, then call",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": "derives timing from opts.budget and self-applies all three data-layout-allow-* to nodes it builds",
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    },
+    {
+      "slug": "riseIn",
+      "kind": "hfpat",
+      "title": "Rise In",
+      "description": "Entrance from below, settles on expDecay, optional alternating tilt.",
+      "install": "HFPat.riseIn(els, opts)",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": "autoOrder sorts by offsetParent chain sum — it sorts its own order rather than trusting the caller",
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    },
+    {
+      "slug": "driftField",
+      "kind": "hfpat",
+      "title": "Drift Field",
+      "description": "Slow linear background drift across the full duration. Fixes dead-still backgrounds, which read as broken in short pieces.",
+      "install": "HFPat.driftField(el, opts)",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": null,
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    },
+    {
+      "slug": "starPop",
+      "kind": "hfpat",
+      "title": "Star Pop",
+      "description": "Rating row, staggered with overshoot. Inline SVG, no network dependency.",
+      "install": "HFPat.starPop(el, opts)",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": null,
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    },
+    {
+      "slug": "copyIn",
+      "kind": "hfpat",
+      "title": "Copy In",
+      "description": "Headline then sub. Spacing only, no rule or underline.",
+      "install": "HFPat.copyIn(el, opts)",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": null,
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    },
+    {
+      "slug": "cardPitch",
+      "kind": "hfpat",
+      "title": "Card Pitch",
+      "description": "Card sequence with measured spacing and distribution.",
+      "install": "HFPat.cardPitch(els, opts)",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": "measures and distributes rather than accepting authored spacing",
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    },
+    {
+      "slug": "guardMotion",
+      "kind": "hfpat",
+      "title": "Guard Motion",
+      "description": "Overlap guard. Throws on card-over-card overlap rather than rendering it.",
+      "install": "HFPat.guardMotion(els, opts)",
+      "writes": "",
+      "source": "$REPO/pattern-library/hfpat.js",
+      "enforced": "catches card-over-card overlap closed-form and throws",
+      "layouts": [
+        "standard",
+        "mirror"
+      ],
+      "provenance": null,
+      "convergence": null,
+      "approved": null
+    }
+  ]
+}

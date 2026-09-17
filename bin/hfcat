@@ -1,0 +1,6 @@
+#!/bin/sh
+# hfcat - search the HyperFrames catalog (372 upstream items + this repo's own
+# patterns). Put this directory on your PATH.
+# Override the interpreter with PEK_PYTHON if `python` is not the right one.
+HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec "${PEK_PYTHON:-python}" "$HERE/../tools/hyperframes-fix/hfcat.py" "$@"
