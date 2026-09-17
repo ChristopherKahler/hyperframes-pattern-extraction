@@ -9,7 +9,7 @@ available from the FULL catalog."
 Measured before this existed: the `hyperframes-catalog` base domain fires on
 prompt keywords and on Write/Edit under Documents/video-gen. It does NOT fire
 on a Bash/PowerShell command such as `npx hyperframes render` from any other
-directory - verified 2026-08-29 by running exactly that from C:/Users/Chris
+directory - verified 2026-08-29 by running exactly that from the home dir
 and receiving no injection. A fresh session would never have heard of hfcat.
 
 What this hook does (PreToolUse, exit 0 always - it never blocks):
@@ -27,7 +27,7 @@ Wiring (settings.json, PreToolUse):
 
     {"matcher": "Bash|PowerShell|Write|Edit|MultiEdit",
      "hooks": [{"type": "command",
-                "command": "C:/Python312/python.exe $HOME/.claude/hooks/hfcat-nudge.py",
+                "command": "python /abs/path/to/hooks/hfcat-nudge.py",
                 "timeout": 5}]}
 
 Output contract: JSON on stdout with hookSpecificOutput.additionalContext.

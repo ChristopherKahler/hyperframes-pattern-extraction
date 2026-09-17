@@ -11,3 +11,9 @@ hyperframes-docs/
 .base-ast/
 .base-ast-cache/
 .base/
+
+# video-use local engine (heavy: torch + ~5GB models) and its outputs
+tools/video-use/.venv/
+tools/video-use/.env
+tools/video-use/video_use.egg-info/
+**/edit/transcripts/

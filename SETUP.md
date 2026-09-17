@@ -59,8 +59,8 @@ stub is a common trap), find the real one and set `PEK_PYTHON` — every launche
 in `bin/` honours it:
 
 ```powershell
-(Get-Command python).Source        # e.g. C:\Python312\python.exe
-$env:PEK_PYTHON = "C:\Python312\python.exe"
+(Get-Command python).Source        # prints the real interpreter path
+$env:PEK_PYTHON = "<paste the path that printed>"
 ```
 
 ## 2 · ffmpeg and ffprobe
@@ -229,18 +229,62 @@ this section if you are only extracting motion patterns.**
 Word-level timestamps are the anchoring substrate for caption pop-ins and
 frame-accurate overlays: every spoken word maps to an exact start/end timecode.
 
-The source machine runs it in a **WSL Ubuntu virtualenv** (~2.1 GB with the
-large-v3 model and wav2vec2 forced alignment, CPU/int8). Nothing about WhisperX
-requires WSL — it is simply where that machine keeps it. A native install works:
+**The transcription engine ships in this repo** at `tools/video-use/` — it is a
+vendored fork of [browser-use/video-use](https://github.com/browser-use/video-use)
+(MIT; see `tools/video-use/ATTRIBUTION.md`). `/wordsrt` and `/breakdown-reel`
+call these helpers by filename, so they must be present:
+
+| Helper | Role |
+|---|---|
+| `helpers/transcribe_local.py` | WhisperX + pyannote ASR → Scribe-shaped word JSON |
+| `helpers/word_srt.py` | derives a **one-cue-per-word** SRT from that JSON |
+| `helpers/pack_transcripts.py` | packs word JSON into phrase-broken takes |
+| `helpers/segment_srt.py` | phrase-level SRT |
+| `helpers/transcribe_batch.py` | routes `--engine local\|scribe` |
+| `helpers/transcribe.py` | the hosted ElevenLabs Scribe path (needs a key) |
+
+### Install the engine
+
+Use a dedicated virtualenv — the `local` extra pulls torch and is heavy
+(~5 GB of models on first run, on top of the packages).
 
 ```bash
-python -m pip install whisperx
-# first run downloads the model (several GB)
-whisperx <audio> --model large-v3 --align_model WAV2VEC2_ASR_LARGE_LV60K_960H \
-         --language en --no_align False --output_format json
+cd tools/video-use
+python -m venv .venv
+
+# Windows
+.venv\Scripts\python -m pip install -e ".[local]"
+# macOS / Linux
+.venv/bin/python -m pip install -e ".[local]"
 ```
 
-Notes carried over from the source setup, worth knowing:
+That installs whisperx, torch, torchaudio, ctranslate2, faster-whisper and
+pyannote.audio, per `pyproject.toml`.
+
+**Check:**
+
+```bash
+.venv/bin/python helpers/transcribe_local.py --help     # .venv\Scripts\python on Windows
+```
+
+### Run it
+
+```bash
+# 1. word-level ASR  ->  edit/transcripts/<name>.json
+.venv/bin/python helpers/transcribe_local.py <media> --no-diarize --language en
+
+# 2. derive the one-cue-per-word SRT from that JSON
+.venv/bin/python helpers/word_srt.py edit/transcripts/<name>.json
+
+# 3. optional: pack into phrase-broken takes for reading
+.venv/bin/python helpers/pack_transcripts.py --edit-dir <media_dir>/edit
+```
+
+`.venv/` is gitignored. Diarisation is optional and needs a HuggingFace token —
+copy `.env.example` to `.env` and fill `HF_TOKEN`, following
+`tools/video-use/HF-TOKEN-SETUP.md`.
+
+### Rules carried over from the source setup
 
 - **Runtime is ~0.3-0.7x realtime on CPU.** A 19-minute file takes 30-60 minutes.
   Launch it in the background and poll; do not block a session on it.
@@ -318,6 +362,7 @@ own location, so a plain clone works with none of them set.
 | `PEK_PYTHON` | `python` | the interpreter `bin/hfcat` should use |
 | `HF_DOCS` | `$PEK_ROOT/catalog` | a full HyperFrames docs mirror |
 | `PEK_REEL` | `$PEK_ROOT/tools/watch-video/reel.py` | — |
+| `PEK_FONT` | auto-detected per platform | monospace TTF `reel.py` burns labels with |
 | `PEK_HUB` | `http://127.0.0.1:7799/api/spawn` | an agent-spawn hub, if you run one |
 | `PEK_RELAY_INBOX` | `~/.pattern-extract/relay-inbox` | where child sessions write status |
 

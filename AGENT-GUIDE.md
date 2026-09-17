@@ -139,8 +139,8 @@ duration, normalised to 1920x1080 @30fps yuv420p with no audio so concat is
 byte-safe. It writes `<out>.manifest.json` mapping index, label, file and reel
 timestamps — so "clip 3 is wrong" resolves to a filename without guessing.
 
-`--font` defaults to a Windows path (`C:/Windows/Fonts/consola.ttf`). On
-macOS/Linux pass your own monospace TTF.
+`--font` auto-detects a monospace TTF per platform (Consolas on Windows, Menlo
+on macOS, DejaVu Sans Mono on Linux). Override with `--font` or `$PEK_FONT`.
 
 ### `bin/hfcat` — search the catalog BEFORE building
 
@@ -219,7 +219,22 @@ Rules that matter:
   it and poll; never block a session on it.
 - Diarisation is off by default and needs an `HF_TOKEN`.
 
-See [commands/wordsrt.md](commands/wordsrt.md) for the full pipeline.
+**The engine ships here** at `tools/video-use/` (vendored MIT fork; see its
+`ATTRIBUTION.md`). The three helpers the commands call by name:
+
+```bash
+cd tools/video-use
+.venv/bin/python helpers/transcribe_local.py <media> --no-diarize --language en
+.venv/bin/python helpers/word_srt.py edit/transcripts/<name>.json
+.venv/bin/python helpers/pack_transcripts.py --edit-dir <media_dir>/edit
+```
+
+**Never strip the `spacing` entries from the word JSON.** `pack_transcripts.py`
+measures `spacing.end - spacing.start` to find silence gaps and break phrases on
+them; without them phrase breaking silently stops working.
+
+See [commands/wordsrt.md](commands/wordsrt.md) for the full pipeline and
+`SETUP.md` section 6 to install the engine.
 
 ### `tools/pattern-factory/` — parallelising the gates
 

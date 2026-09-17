@@ -28,6 +28,8 @@ tools/
   watch-video/        watch.py, motion.py, fit-ease.py, reel.py
   pattern-factory/    factory.py, codify.py + the child-session briefs
   hyperframes-fix/    hfcat.py (catalog search), docs mirror, Windows fixes
+  video-use/          WhisperX transcription engine (vendored fork, MIT)
+                      transcribe_local.py, word_srt.py, pack_transcripts.py
 
 catalog/reference/  The HyperFrames catalog indexes hfcat queries
                     372 items (154 blocks + 218 components) + guides
@@ -102,7 +104,12 @@ difference is visible.
 
 ## Licence and provenance
 
-The pipeline, the tooling and `hfpat.js` are original work. The
+`tools/video-use/` is a vendored fork of
+[browser-use/video-use](https://github.com/browser-use/video-use), MIT licensed —
+its licence travels with it in `tools/video-use/LICENSE` and the split between
+upstream and fork additions is itemised in `tools/video-use/ATTRIBUTION.md`.
+
+The pipeline, the rest of the tooling and `hfpat.js` are original work. The
 `catalog/reference/` indexes describe the upstream
 [HyperFrames](https://www.npmjs.com/package/hyperframes) catalog and are
 included so `hfcat` works from a clone; the full HyperFrames documentation

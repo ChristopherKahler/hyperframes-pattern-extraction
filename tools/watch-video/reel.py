@@ -19,7 +19,8 @@ Usage:
   python reel.py OUT.mp4 --dir renders/                 # every *.mp4, sorted, label = stem
   python reel.py OUT.mp4 --clip orbitStage/standard a.mp4 --clip orbitStage/mirror b.mp4
   python reel.py OUT.mp4 --manifest clips.json          # [{"label":..., "file":...}, ...]
-  --font C:/Windows/Fonts/consola.ttf   --slate 0.6   --crf 18
+  --font /path/to/monospace.ttf   --slate 0.6   --crf 18
+  (--font is auto-detected per platform; override with it or $PEK_FONT)
 """
 
 import argparse
@@ -70,6 +71,36 @@ def run(cmd):
         die("ffmpeg failed:\n  " + " ".join(cmd) + "\n" + r.stderr[-1500:])
 
 
+def default_font():
+    """First monospace TTF that exists on this machine.
+
+    The label burn-in needs a real font file for ffmpeg drawtext. Returns None
+    when nothing is found, so main() can ask for --font rather than dying on a
+    path that only ever existed on one machine.
+    """
+    env = os.environ.get("PEK_FONT")
+    if env:
+        return env
+    candidates = [
+        # Windows
+        "C:/Windows/Fonts/consola.ttf",
+        "C:/Windows/Fonts/cour.ttf",
+        # macOS
+        "/System/Library/Fonts/Menlo.ttc",
+        "/System/Library/Fonts/Monaco.ttf",
+        "/Library/Fonts/Courier New.ttf",
+        # Linux
+        "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
+        "/usr/share/fonts/TTF/DejaVuSansMono.ttf",
+        "/usr/share/fonts/dejavu/DejaVuSansMono.ttf",
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -77,7 +108,9 @@ def main():
     ap.add_argument("--dir", default=None, help="take every *.mp4 in this dir, sorted")
     ap.add_argument("--clip", nargs=2, action="append", metavar=("LABEL", "FILE"), default=[])
     ap.add_argument("--manifest", default=None, help='json list of {"label","file"}')
-    ap.add_argument("--font", default="C:/Windows/Fonts/consola.ttf")
+    ap.add_argument("--font", default=None,
+                    help="monospace TTF for the burned-in labels; "
+                         "auto-detected per platform, or set PEK_FONT")
     ap.add_argument("--slate", type=float, default=0.6, help="seconds of title slate before each clip; 0 disables")
     ap.add_argument("--crf", type=int, default=18)
     ap.add_argument("--title", default=None, help="optional opening slate text (e.g. the reference name)")
@@ -85,6 +118,11 @@ def main():
 
     if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
         die("ffmpeg/ffprobe not on PATH")
+    if not a.font:
+        a.font = default_font()
+    if not a.font:
+        die("no monospace font found on this machine.\n"
+            "  Pass --font /path/to/a/monospace.ttf, or set PEK_FONT.")
     if not os.path.exists(a.font):
         die(f"font not found: {a.font}")
 

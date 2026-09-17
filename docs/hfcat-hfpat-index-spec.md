@@ -18,7 +18,7 @@ Answer: yes, and there is exactly one thing that would break it.
 
 | Thing | Where |
 |---|---|
-| launcher | `hfcat` → `sh` shim, execs `C:/Python312/python.exe` |
+| launcher | `hfcat` → `sh` shim, execs `python` |
 | implementation | `$REPO/tools/hyperframes-fix/hfcat.py` |
 | index | `Documents/video-gen/hyperframes-docs/reference/catalog-index.json` |
 
@@ -49,7 +49,7 @@ at line 118 with `choices=["block", "component"]`.
 
 ⚑ `index-catalog.py` is referenced in hfcat's own help text as
 `scratchpad/index-catalog.py` but I could not find it on disk under
-`Documents/video-gen` or `C:/Users/Chris` at depth 4. Locate it before relying
+`Documents/video-gen` or `the home directory` at depth 4. Locate it before relying
 on where the rebuild writes.
 
 ---
