@@ -346,7 +346,6 @@ Renders must be reproducible frame for frame. In any builder you write:
 | What's waiting for approval? | `pattern-library/PENDING.md` |
 | What did past runs cost, and why? | `pattern-library/LEDGER.md` |
 | How do I write an ffmpeg filter here? | `docs/FFMPEG-LEVERS.md` |
-| How do I plan a video? | `docs/PLAYBOOK.md` |
 | Why are there two index files? | `docs/hfcat-hfpat-index-spec.md` |
 | How do I install all this? | `SETUP.md` |
 

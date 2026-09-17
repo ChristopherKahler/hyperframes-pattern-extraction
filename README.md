@@ -42,7 +42,7 @@ pattern-library/    The output of all of the above
 
 bin/                hfcat launchers (put this dir on PATH)
 hooks/              hfcat-nudge.py — makes an agent remember the catalog exists
-docs/               PLAYBOOK.md, FFMPEG-LEVERS.md, catalog/index spec
+docs/               FFMPEG-LEVERS.md, catalog/index spec
 ```
 
 ## Start here
