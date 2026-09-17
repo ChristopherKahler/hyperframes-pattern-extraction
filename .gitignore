@@ -6,3 +6,8 @@ __pycache__/
 node_modules/
 # Generated locally, not redistributed (upstream HyperFrames docs):
 hyperframes-docs/
+
+# base CLI local artifacts (absolute paths, per-machine caches)
+.base-ast/
+.base-ast-cache/
+.base/
